@@ -1,54 +1,50 @@
-<h1> Steps Performed </h1>
+# House Price Prediction — Linear Regression
 
-Data Loading & Cleaning
+A machine learning pipeline that predicts house prices based on property features such as area, bedrooms, bathrooms, location preferences, and amenities.
 
-Loaded the dataset from CSV file.
+---
 
-Dropped index column (non-informative).
+##  Steps Performed
 
-Preprocessing
+### 1. **Data Loading & Cleaning**
+- Loaded the dataset from a CSV file.
+- Dropped the non-informative `index` column.
 
-Encoded categorical features (mainroad, guestroom, etc.) into numerical format using One-Hot Encoding.
+### 2. **Preprocessing**
+- Encoded categorical features (`mainroad`, `guestroom`, `furnishingstatus`, etc.) into numerical format using **One-Hot Encoding**.
 
-Splitting Data
+### 3. **Splitting Data**
+- Split dataset into **80% training** and **20% testing** sets.
 
-Split the dataset into training (80%) and testing (20%) sets.
+### 4. **Model Training**
+- Used **`LinearRegression`** from `sklearn.linear_model` to train the model.
 
-Model Training
+### 5. **Model Evaluation**
+Evaluated model performance using:
+- **Mean Absolute Error (MAE)**  
+- **Mean Squared Error (MSE)**  
+- **R² Score**
+  
+### 6. **Visualization**
+![Actual vs Predicted Prices](https://github.com/user-attachments/assets/bdf02cd7-32fe-4c91-ba5f-84f6484e08c6)  
+*Scatter plot comparing actual and predicted house prices.*
 
-Used LinearRegression from sklearn.linear_model to train the model on the training set.
+### 7. **Feature Importance**
+- Printed model coefficients to understand the influence of each feature on house prices.
 
-Model Evaluation
+---
 
-Evaluated performance using:
+##  **Results**
+- **MAE**: `970,043.40`  
+- **MSE**: `1,754,318,687,330.66`  
+- **R² Score**: `0.6529`
 
-Mean Absolute Error (MAE)
+---
 
-Mean Squared Error (MSE)
-
-R² Score
-
-Visualization
-
-<img width="554" height="455" alt="image" src="https://github.com/user-attachments/assets/bdf02cd7-32fe-4c91-ba5f-84f6484e08c6" />
-
-Created Actual vs Predicted price scatter plot to assess model fit.
-
-Feature Importance
-
-Printed model coefficients to understand the effect of each feature on house price.
-
-<h3> Results </h3>
-MAE: 970043.4039201636
-
-MSE: 1754318687330.6638
-
-R² Score: 0.6529242642153184
-
-<h3> Key Insights </h3>
-Larger area, higher number of bathrooms, and preferred location significantly increase house prices.
+##  **Key Insights**
+- Larger **area**, more **bathrooms**, and **preferred location** significantly increase house prices.  
+- Features like **mainroad access**, **air conditioning**, and **furnishing status** also contribute positively.  
+- The model serves as a **baseline**; performance can be improved with **feature engineering** or **advanced regression models**.
 
 
-Features like mainroad access, air conditioning, and furnishing status also contribute positively.
 
-The model provides a baseline predictive performance that can be improved with feature engineering or advanced models.
